@@ -1,0 +1,29 @@
+# Paul's must-have bash aliases
+
+# In bash, aliases cannot use command-line arguments.
+#  http://linuxgazette.net/issue53/eyler.html
+#       Instead, one could write a simple bash function, like this
+#               NOTE:  Be sure the is not already an aliases called "lss"
+#
+lss() {
+	ls -lt --color=always $* | head -20
+}
+pput() {
+	scp $* paullu@somemachine.cs.ualberta.ca:
+}
+
+pget() {
+	scp paullu@somemachine.cs.ualberta.ca:$1 .
+}
+
+# Log back into the host machine, using port forwarding
+alias lssh='ssh -p 4222 paullu@localhost'
+alias lsf='find . -print'
+alias viM='vim Makefile'
+alias mc='make clean'
+alias gc='git commit -a'
+alias gp='git push'
+alias h="history"
+alias pj="jq --indent 2 '.' "
+
+EDITOR=vim; export EDITOR

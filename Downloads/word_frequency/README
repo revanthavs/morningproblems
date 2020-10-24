@@ -1,0 +1,46 @@
+# --------------------------------------------
+#   Name: Atmakuri Venkata Sai Revanth
+#   ID: 1684293
+#   CMPUT 274, Fall 2020
+#
+#   Weekly Exercise 3: Word Frequency
+# --------------------------------------------
+
+INCLUDED FILES:
+freq.py
+README
+
+NOTES AND ASSUMPTIONS:
+
+Imported sys module to get access command line arguments
+
+Functions in freq.py:
+command_line():
+open_file()
+word_list()
+words_freq()
+data_output()
+main()
+
+(command_line)
+First the program will take the commanline arguments and make them a list.
+If the user forget to include inputfile name the error will be printed and program exits.
+If the user included more than just inpurfile the error will be printed and program exits.
+(open_file)
+If the inputfile is in same directory as freq.py the file opens if they are not in same directory 
+the excpetion of File not found will be raised and the program exits
+(word_list)
+Ones the file is opend the content of the file will be read line by line and will be divided into
+words and stored in as list and ones all words were added to list they will be sorted by using
+Build-in method "sort()" and will be returned as a sorted list
+(words_freq)
+After the the file content were sorted we can see that the in the sorted list if a word repetes then
+the word will be a sequence in the list till the number of time the word will be repeted.
+Since the word were in list of sequence ordered we can find the count of word by counting the 
+starting and ending index of the list and the word, it's count and it's relative frequency will be added
+to three different lists with same index.
+(data_output)
+Since all the three lists(words,word_count,word_freq) has the same index they will be added to the output
+file and the output file will be closed ones all the items are added.
+(main)
+All the process above will be happened inside the main block and ones all were done the input file will be closed

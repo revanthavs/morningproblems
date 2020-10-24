@@ -1,0 +1,63 @@
+
+########################################################################
+   Name: Atmakuri Venkata Sai Revanth(Avs Revanth)
+   Student_id: 1684293
+   CMPUT 274 Fall 2020
+   Weekly Exercise = 1
+   Exercise: Password validator and password generater
+ #######################################################################
+
+ INCLUDED FILES:-
+ validator.py
+ README
+
+ NOTES AND ASSUMPTIONS:-
+
+ Imported randint method form random
+ to generate random integer
+
+ For the Password generator make sure to enter the length greater than or equal to 8.
+ 
+ For Password validater: 
+
+ Arguments:
+ 	password (string)
+ Return:
+ 	result (string): either "Secure", "Insecure" or "Invalid"
+
+ Used methods
+ str.isupper()
+ str.islower()
+ str.isdigit()
+
+ Used lists
+ forbidden_characters
+ Special_characters
+
+There are three returns for validater function:
+If the given password is Invalid then function call will end after returning Invalid string 
+and if it's not a Invalid password then function call will continue
+If the password is not Invalid then it will check for all secure password condition and if it 
+satisfies all the conditions of secure then function call will end after returning Secure string
+If the password doesn't satisfies both Invalid and Secure password then there will be check for 
+Insecure condition if the conditions sstisfies then function call will end after returning Insecure string
+
+For Password generator:
+
+Arguments:
+	n (integer): 
+		length of the password to generate
+Return:
+	secure_password (string) or 
+	message that n is less then 8
+
+Used methods
+randint()
+
+Used lists
+Special_characters
+digit
+
+There are two returns for generator function:
+If the given length of password is less then 8 then the fuction call will end after returning
+the message that the length is less then 8

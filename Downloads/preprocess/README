@@ -1,0 +1,81 @@
+#--------------------------------------------
+#   Name: Atmakuri Venkata Sai Revanth
+#   ID: 1684293
+#   CMPUT 274, Fall 2020
+#
+#   Weekly Exercise #4: Text Preprocessor
+#--------------------------------------------
+
+INCLUDED FILES:
+
+preprocess.py
+README
+
+RUNNING INSTRUCTIONS:
+
+To run the program with one of the mode below:
+'keep-digits': will not remove numbers from words
+'keep-stops': will not remove stopwords
+'keep-symbols': will not remove punctuation or symbols
+Run program in terminal by
+
+python3 preprocess.py <mode>
+
+Here mode is options so if you want to run the program without any mode
+
+python3 preprocess.py
+
+but make sure to include only one mode if there are more 
+than one mode or entered incorrect mode the program exits.
+
+NOTES AND ASSUMPTIONS:
+
+Imported sys module to read commandline arguements to find the give mode
+
+The input should be only one line of input with space separated words
+
+Used methods:
+
+ord() - To know the ascii value of character
+chr() - To convert ascii value to character
+len() - To know the length of list and length of string
+exit() - To exit the program if there are more than 2 arguments or wrong mode
+split() - To take space separated words
+
+Exception handling:
+
+EOFError If input get to end of file the exception will be handled by EOFError and returns
+the words of list add until the exception rasied.
+
+Used functions(Total: 7):
+
+read_cline():
+	Reads the commandline arguments and if there are more than 2 arguments then the program will 
+	print a message and exit the program. If there are only 2 arguments then it will check for the 
+	mode if the mode is not one of the three then program will exit. If the mode is correct then 
+	funtion call will return the state of three modes to caller.If there are no mode is present then
+	funtion will return the default states of three modes to caller.
+wordslist():
+	Read in the line of input from the user and converts it into a list of space sepearated words.
+	Then function will return the address of list created to caller.
+lowercasewords():
+	The funtion take the address of list of words to be processed as arguments.
+	For eveny letter in the word if there are any uppercase letter then for it's ascii value
+	32 is added and will be add to string if not the same letter will be add to string and at 
+	after the all letter in the word processed then string will be added to a new list. This process
+	will continue for all the words in list.
+	The function will return the address of new list created to caller.
+R_symbols():
+	Since all the words in the list will be converted to lower case if a letter in a word is not a lower case
+	letter or a digit then the letter will not be added to string and final string will be added to list.
+	The function will return the address of new list created to caller.
+R_digits():
+	From given word list if word contains a digit and also word contains letter then the letter in word will
+	be added to new list. If a word contained only digits then the digits in the word will be added to list.
+	The function will return the address of new list created to caller.
+R_stops():
+	From given words all non stop words will be added to a new list and remaining the words will be added to a new
+	list and will be returned the new list address.
+main():
+	Depending on the user mode the fucntion call will called from this function and ones the final list be returned
+	from the called function it will be copied to new list called processed words and will be printed.

@@ -1,0 +1,33 @@
+p8:
+	cp words.3 file.input.txt
+	python3 count.the.p8.py
+	-rm file.input.txt
+	python3 count.the.p8.py < words.3
+
+p7:
+	cp words.2 file.input.txt
+	python3 count.the.p7.py
+	-rm file.input.txt
+	cat file.output.txt
+	#
+	cp words.3 file.input.txt
+	python3 count.the.p7.py
+	-rm file.input.txt
+	cat file.output.txt
+
+p6:
+	python3 count.the.p6.py	< words.2
+	cp words.2 file.input.txt
+	python3 count.the.p6.py
+	-rm file.input.txt
+	cp words.3 file.input.txt
+	python3 count.the.p6.py
+	-rm file.input.txt
+
+stdin:
+	python3 count.the.p6.py	< words.2
+
+style:
+	python3 ~/arduino-ua/bin/stylecheck.py count.the.p6.py
+	python3 ~/arduino-ua/bin/stylecheck.py count.the.p7.py
+	python3 ~/arduino-ua/bin/stylecheck.py count.the.p8.py
